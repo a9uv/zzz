@@ -1,6 +1,6 @@
 export default function Contact() {
     return (
-        <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
+             <main className="flex min-h-screen flex-col items-center justify-center bg-gray-800">
             <p className="text-2xl">
                 Contact
             </p>
@@ -10,7 +10,7 @@ export default function Contact() {
             <p className="text-2xl">
                 +1 202-555-0101
             </p>
-        </div>
+        </main>
 
             
 )
