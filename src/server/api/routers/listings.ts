@@ -4,6 +4,19 @@ import { createTRPCRouter, protectedProcedure, publicProcedure } from "~/server/
 
 export const listingsRouter = createTRPCRouter({
 
+    list: publicProcedure.query(({ ctx }) => {
+    return ctx.prisma.listing.findMany();
+  }),
+  get: publicProcedure
+    .input(z.object({ listingId: z.string() }))
+    .query(({ ctx, input }) => {
+      return ctx.prisma.listing.findUnique({
+        where: {
+          id: input.listingId,
+        },
+      });
+    }),
+
 
   create: protectedProcedure
     .input(
