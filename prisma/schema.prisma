@@ -12,7 +12,7 @@ datasource db {
 }
 
 model Listing {
-    id          Int      @id @default(autoincrement())
+    id          String   @id @default(cuid())
     userId      String
     createdAt   DateTime @default(now())
     updatedAt   DateTime @updatedAt
